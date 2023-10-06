@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import image1 from "../assets/img/icons/error-404-alert.png";
-import image2 from "../assets/img/icons/error-404-art.png";
+import image1 from "../../assets/img/error-404-alert.png";
+import image2 from "../../assets/img/error-404-art.png";
+import "./NotFound.css";
 
 const NotFound = () => {
 	useEffect(() => {

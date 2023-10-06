@@ -1,0 +1,43 @@
+main {
+    display: flex;
+    min-height: calc(100vh - 100px);
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    font-family: "Trade Gothic Bold";
+    height: 50px;
+    background-color: #4ed2ad;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer {
+    height: 50px;
+    background-color: #4ed2ad;
+}
+
+.switch-icon {
+    height: 70%;
+    padding: 15%;
+}
+
+.header-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px 10px;
+}
+
+header span {
+    color: #646cff;    
+}
+header > p{
+    font-weight: bold;
+    font-size: 25px;
+    margin: 0px 20px;
+}
