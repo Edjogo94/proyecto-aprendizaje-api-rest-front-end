@@ -23,34 +23,44 @@ export function AddEditForm({
 	const navigate = useNavigate();
 
 	useEffect(() => {
+		document.title = title;
+	}, []);
+	useEffect(() => {
 		let selectors = fields.filter((field) => field.type === "selector");
 		let loadedCount = 0;
 		selectors.forEach((element) => {
-			axios
-				.get(element.link)
-				.then((response) => {
-					const renamedData = response.data.map((item) => ({
-						label: item.nombre,
-						value: item.id,
-					}));
-					setoptions((prevOptions) => ({
-						...prevOptions,
-						[element.name]: renamedData,
-					}));
-					loadedCount++;
-					if (loadedCount === selectors.length) {
+			if (element.link) {
+				axios
+					.get(element.link)
+					.then((response) => {
+						const renamedData = response.data.map((item) => ({
+							label: item.nombre,
+							value: item.id,
+						}));
+						setoptions((prevOptions) => ({
+							...prevOptions,
+							[element.name]: renamedData,
+						}));
+						loadedCount++;
+						if (loadedCount === selectors.length) {
+							setLoading(false);
+						}
+					})
+					.catch((error) => {
+						seterror(
+							"Error:" + error.response.data.error
+								? error.response.data.error
+								: error.response.data.message
+						);
 						setLoading(false);
-					}
-				})
-				.catch((error) => {
-					seterror(
-						"Error:"+
-						error.response.data.error
-							? error.response.data.error
-							: error.response.data.message
-					);
-					setLoading(false);
+					});
+			} else {
+				setoptions({
+					...options,
+					[element.name]: element.options,
 				});
+				setLoading(false);
+			}
 		});
 
 		if (mode === "edit") {
@@ -68,13 +78,14 @@ export function AddEditForm({
 				})
 				.catch((error) => {
 					seterror(
-						"Error:"+
-						error.response.data.error
+						"Error:" + error.response.data.error
 							? error.response.data.error
 							: error.response.data.message
 					);
 					setLoading(false);
 				});
+		} else {
+			setLoading(false);
 		}
 	}, []);
 
@@ -96,8 +107,7 @@ export function AddEditForm({
 				.catch((error) => {
 					setIsSubmitting(false);
 					seterror(
-						"Error:"+
-						error.response.data.error
+						"Error:" + error.response.data.error
 							? error.response.data.error
 							: error.response.data.message
 					);
@@ -112,8 +122,7 @@ export function AddEditForm({
 				.catch((error) => {
 					setIsSubmitting(false);
 					seterror(
-						"Error:"+
-						error.response.data.error
+						"Error:" + error.response.data.error
 							? error.response.data.error
 							: error.response.data.message
 					);

@@ -1,5 +1,6 @@
 table {
-    width: 90%;
+    max-width: 90%;
+    min-width: 50%;
     text-align: center;
 
     border-collapse: collapse;
@@ -43,6 +44,7 @@ td:hover {
     display: flex;
     flex-direction: row;
     border: none;
+    width: min-content;
 }
 
 .actions * {

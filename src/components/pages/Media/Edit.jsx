@@ -7,7 +7,7 @@ export function MediaEditPage({ isChecked }) {
 	return (
 		<>
 			<AddEditForm
-				title="Añadir un Media"
+				title="Editar un Media"
 				isChecked={isChecked}
 				apiUrl={api + "/media/" + id}
 				postUrl={api + "/media/" + id}

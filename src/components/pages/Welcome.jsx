@@ -6,6 +6,10 @@ const Welcome = () => {
 	function handleClick() {
 		navigate("/media");
 	}
+
+	useEffect(() => {
+		document.title = "Inicio";
+	}, []);
 	return (
 		<div className="welcome-container">
 			<h1>Bienvenido a la Gestión de Tablas</h1>

@@ -22,6 +22,10 @@ export function Table({
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
+		document.title = title;
+	}, []);
+
+	useEffect(() => {
 		axios
 			.get(dataLink)
 			.then((response) => {
