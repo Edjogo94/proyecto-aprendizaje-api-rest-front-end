@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./Welcome.css"; // Importa el archivo CSS para estilos
+import { useEffect } from "react";
 
 const Welcome = () => {
 	const navigate = useNavigate();
