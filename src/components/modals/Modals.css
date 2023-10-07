@@ -22,6 +22,7 @@
 
 .modal-overlay .modal-c {
     background-color: white;
+    color: #000;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
@@ -34,13 +35,6 @@
     margin-top: 20px;
 }
 
-.modal-overlay .modal-c .button-container .modal-button {
-    padding: 5px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
 
 .modal-overlay .modal-c .button-container .modal-button.accept-button {
     background-color: #505050;
@@ -53,6 +47,7 @@
 }
 
 .modal-overlay .modal-c h2 {
+    font-family: "Trade Gothic Bold";
     margin-top: 0;
     text-align: center;
 }

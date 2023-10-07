@@ -42,7 +42,31 @@ export function MainLayOut({ children, isChecked, setIsChecked }) {
 					></Switch>
 				</div>
 			</header>
-			<main>{children}</main>
+			<section className="content">
+				<aside>
+					<ul>
+						<li>
+							<Link to="/">Inicio</Link>
+						</li>
+						<li>
+							<Link to="/media">Media</Link>
+						</li>
+						<li>
+							<Link to="/directors">Directores</Link>
+						</li>
+						<li>
+							<Link to="/generos">Generos</Link>
+						</li>
+						<li>
+							<Link to="/productores">Productores</Link>
+						</li>
+						<li>
+							<Link to="/tipos">Tipos</Link>
+						</li>
+					</ul>
+				</aside>
+				<main>{children}</main>
+			</section>
 			<footer></footer>
 		</>
 	);

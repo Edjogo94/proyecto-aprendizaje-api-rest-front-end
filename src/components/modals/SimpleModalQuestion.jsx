@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-
+import "./Modals.css";
 const ModalQuestion = ({
 	isOpen,
 	title,
@@ -20,13 +19,13 @@ const ModalQuestion = ({
 				<p>{message}</p>
 				<div className="button-container">
 					<button
-						className="page-button modal-button reject-button"
+						className="modal-button reject-button"
 						onClick={onReject}
 					>
 						{rejectText}
 					</button>
 					<button
-						className="modal-button accept-button page-button"
+						className="modal-button accept-button"
 						onClick={onAccept}
 					>
 						{acceptText}
